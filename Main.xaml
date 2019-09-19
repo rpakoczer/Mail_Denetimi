@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1264,873</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1264,913</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
@@ -97,1196 +97,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID31</x:Reference>
+      <x:Reference>__ReferenceID11</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">1006,604.02</av:Point>
-          <av:Size x:Key="ShapeSize">200,112</av:Size>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <Sequence sap2010:Annotation.AnnotationText="mail özellikleri ve ek kontrolü(excel eki kontrolü)" DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="200,112" sap2010:WorkflowViewState.IdRef="Sequence_41">
-        <Sequence.Variables>
-          <Variable x:TypeArguments="snm:MailMessage" Name="mail" />
-          <Variable x:TypeArguments="sd:DataTable" Default="[New DataTable()]" Name="logs" />
-          <Variable x:TypeArguments="x:String" Name="mailBody" />
-        </Sequence.Variables>
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-        <ui:GetOutlookMailMessages Account="{x:Null}" Filter="{x:Null}" TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="&quot;Top&quot; özelliği asla! AMA asla değiştirilmemeli.&#xA;Değer her zaman &quot;1&quot; olmalı.." DisplayName="Outlook iletilerini getir" GetAttachements="False" sap:VirtualizedContainerService.HintSize="484,82" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_6" MailFolder="Inbox" MarkAsRead="True" Messages="[mailMessages]" OnlyUnreadMessages="True" Top="1">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-        </ui:GetOutlookMailMessages>
-        <While DisplayName="Döngü" sap:VirtualizedContainerService.HintSize="484,1213" sap2010:WorkflowViewState.IdRef="While_3">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <While.Condition>[mailCount &gt; 0 and mailMessages.Count &gt; 0]</While.Condition>
-          <TryCatch DisplayName="Dene/Yanıl" sap:VirtualizedContainerService.HintSize="438,1053" sap2010:WorkflowViewState.IdRef="TryCatch_3">
-            <TryCatch.Variables>
-              <Variable x:TypeArguments="x:String" Name="result" />
-            </TryCatch.Variables>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <TryCatch.Try>
-              <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="376,821" sap2010:WorkflowViewState.IdRef="Sequence_48">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_14">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="snm:MailMessage">[mail]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="snm:MailMessage">[mailMessages(0)]</InArgument>
-                  </Assign.Value>
-                </Assign>
-                <Flowchart sap2010:Annotation.AnnotationText="Kimden&#xA;konu&#xA;ek sayısı&#xA;ek uzantısı" DisplayName="Diagram" sap:VirtualizedContainerService.HintSize="334,128" sap2010:WorkflowViewState.IdRef="Flowchart_2">
-                  <Flowchart.Variables>
-                    <Variable x:TypeArguments="x:Int32" Name="rulesIndex" />
-                    <Variable x:TypeArguments="x:Boolean" Name="isMatch" />
-                    <Variable x:TypeArguments="sd:DataTable" Name="dataTableAttachment" />
-                    <Variable x:TypeArguments="sd:DataTable" Name="dataTableSample" />
-                  </Flowchart.Variables>
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <av:Point x:Key="ShapeLocation">470,0</av:Point>
-                      <av:Size x:Key="ShapeSize">60,75</av:Size>
-                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                      <av:PointCollection x:Key="ConnectorLocation">500,75 500,102.5</av:PointCollection>
-                      <x:Double x:Key="Width">1220</x:Double>
-                      <x:Double x:Key="Height">1350</x:Double>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <Flowchart.StartNode>
-                    <x:Reference>__ReferenceID19</x:Reference>
-                  </Flowchart.StartNode>
-                  <FlowDecision x:Name="__ReferenceID19" sap2010:Annotation.AnnotationText="mail.from boşmu" Condition="[not mail.From Is Nothing]" DisplayName="Kontrol" sap:VirtualizedContainerService.HintSize="132,115" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <av:Point x:Key="ShapeLocation">434,102.5</av:Point>
-                        <av:Size x:Key="ShapeSize">132,115</av:Size>
-                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                        <av:PointCollection x:Key="FalseConnector">566,160 656,160</av:PointCollection>
-                        <x:String x:Key="FalseLabel">Boş</x:String>
-                        <x:String x:Key="TrueLabel">Dolu</x:String>
-                        <av:PointCollection x:Key="TrueConnector">434,160 300,160</av:PointCollection>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <FlowDecision.True>
-                      <FlowStep x:Name="__ReferenceID13">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <av:Point x:Key="ShapeLocation">100,80</av:Point>
-                            <av:Size x:Key="ShapeSize">200,160</av:Size>
-                            <av:PointCollection x:Key="ConnectorLocation">200,240 200,320 400,320</av:PointCollection>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <Sequence sap2010:Annotation.AnnotationText="Sıradaki okunan mail'in kimden olduğu kontrol eder. Ayarlar dosyasındaki indexi alınır ve &quot;Kimden&quot; bilgisi kontrol edilir." DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="200,160" sap2010:WorkflowViewState.IdRef="Sequence_97">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ui:ForEachRow CurrentIndex="[rulesIndex]" DataTable="[RulesDataTable]" DisplayName="Döngü" sap:VirtualizedContainerService.HintSize="599,455" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
-                            <ui:ForEachRow.Body>
-                              <ActivityAction x:TypeArguments="sd:DataRow">
-                                <ActivityAction.Argument>
-                                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
-                                </ActivityAction.Argument>
-                                <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="549,306" sap2010:WorkflowViewState.IdRef="Sequence_95">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <If Condition="[row(&quot;Kimden&quot;).ToString().ToLower().Contains(mail.From.Address.ToLower()) And&#xA;row(&quot;Konu&quot;).ToString().ToLower().Contains(mail.Subject.ToLower()) And&#xA;row(&quot;Ek sayisi&quot;).ToString().ToLower().Contains(mail.From.Address.ToLower())]" DisplayName="Eğer" sap:VirtualizedContainerService.HintSize="507,214" sap2010:WorkflowViewState.IdRef="If_40">
-                                    <If.Then>
-                                      <ui:Break DisplayName="Çık" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Break_7" />
-                                    </If.Then>
-                                    <If.Else>
-                                      <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_57">
-                                        <Assign.To>
-                                          <OutArgument x:TypeArguments="x:Int32">[rulesIndex]</OutArgument>
-                                        </Assign.To>
-                                        <Assign.Value>
-                                          <InArgument x:TypeArguments="x:Int32">-1</InArgument>
-                                        </Assign.Value>
-                                      </Assign>
-                                    </If.Else>
-                                  </If>
-                                </Sequence>
-                              </ActivityAction>
-                            </ui:ForEachRow.Body>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </ui:ForEachRow>
-                          <If Condition="[rulesIndex &gt; -1]" DisplayName="Eğer" sap:VirtualizedContainerService.HintSize="599,464" sap2010:WorkflowViewState.IdRef="If_41">
-                            <If.Else>
-                              <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="304,314" sap2010:WorkflowViewState.IdRef="Sequence_96">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_55">
-                                  <Assign.To>
-                                    <OutArgument x:TypeArguments="x:String">[mailBody]</OutArgument>
-                                  </Assign.To>
-                                  <Assign.Value>
-                                    <InArgument x:TypeArguments="x:String">[Nothing]</InArgument>
-                                  </Assign.Value>
-                                </Assign>
-                                <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_56">
-                                  <Assign.To>
-                                    <OutArgument x:TypeArguments="x:String">[result]</OutArgument>
-                                  </Assign.To>
-                                  <Assign.Value>
-                                    <InArgument x:TypeArguments="x:String">Gönderen boş geçilemez.</InArgument>
-                                  </Assign.Value>
-                                </Assign>
-                                <Throw DisplayName="Hata Ver" Exception="[new Exception(&quot;Kimden alanı boş olamaz.&quot;)]" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Throw_39" />
-                              </Sequence>
-                            </If.Else>
-                          </If>
-                          <ui:LogMessage DisplayName="Günlük Mesajı" sap:VirtualizedContainerService.HintSize="599,93" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[&quot;Kimlik kontrolü başarılı&quot;]" />
-                        </Sequence>
-                        <FlowStep.Next>
-                          <FlowStep x:Name="__ReferenceID2">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <av:Point x:Key="ShapeLocation">400,264</av:Point>
-                                <av:Size x:Key="ShapeSize">200,112</av:Size>
-                                <av:PointCollection x:Key="ConnectorLocation">500,376 500,422.5</av:PointCollection>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ui:IsMatch sap2010:Annotation.AnnotationText="&#xA;Konu.&#xA;" DisplayName="Uyuşuyor mu?" sap:VirtualizedContainerService.HintSize="200,112" sap2010:WorkflowViewState.IdRef="IsMatch_1" Input="[mail.Subject]" IsBuilderTabModified="False" Pattern="[RulesDataTable.Rows(rulesIndex)(&quot;Konu&quot;).ToString]" RegexOption="IgnoreCase, Compiled" Result="[isMatch]">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </ui:IsMatch>
-                            <FlowStep.Next>
-                              <FlowDecision x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="konu bilgisi kontrol" Condition="[isMatch]" DisplayName="Uyuşuyor mu?" sap:VirtualizedContainerService.HintSize="144,115" sap2010:WorkflowViewState.IdRef="FlowDecision_6">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    <av:Point x:Key="ShapeLocation">428,422.5</av:Point>
-                                    <av:Size x:Key="ShapeSize">144,115</av:Size>
-                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                    <x:String x:Key="FalseLabel">Hayır</x:String>
-                                    <x:String x:Key="TrueLabel">Evet</x:String>
-                                    <av:PointCollection x:Key="FalseConnector">572,480 672,480</av:PointCollection>
-                                    <av:PointCollection x:Key="TrueConnector">428,480 398,480 398,424 300,424</av:PointCollection>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <FlowDecision.True>
-                                  <FlowStep x:Name="__ReferenceID17">
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <av:Point x:Key="ShapeLocation">100,384</av:Point>
-                                        <av:Size x:Key="ShapeSize">200,80</av:Size>
-                                        <av:PointCollection x:Key="ConnectorLocation">200,464 200,496</av:PointCollection>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                    <ui:LogMessage sap2010:Annotation.AnnotationText="konu bilgisi" DisplayName="Günlük Mesajı" sap:VirtualizedContainerService.HintSize="200,80" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[&quot;Konu Bilgisi kontrol edildi&quot;]">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                    </ui:LogMessage>
-                                    <FlowStep.Next>
-                                      <FlowStep x:Name="__ReferenceID12">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <av:Point x:Key="ShapeLocation">100,496</av:Point>
-                                            <av:Size x:Key="ShapeSize">200,80</av:Size>
-                                            <av:PointCollection x:Key="ConnectorLocation">200,576 200,626</av:PointCollection>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <ui:SaveMailAttachments Attachments="{x:Null}" sap2010:Annotation.AnnotationText="Ekleri bilgisayara kaydeder" DisplayName="Ekleri kaydet" FolderPath="[workingDirectory]" sap:VirtualizedContainerService.HintSize="200,80" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" Message="[mail]">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                        </ui:SaveMailAttachments>
-                                        <FlowStep.Next>
-                                          <FlowDecision x:Name="__ReferenceID6" sap2010:Annotation.AnnotationText="ek sayisi kontrol" Condition="[CInt(RulesDataTable.Rows(rulesIndex)(&quot;Ek sayısı&quot;)) = mail.Attachments.Count]" DisplayName="Eşit mi?" sap:VirtualizedContainerService.HintSize="127,115" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                <av:Point x:Key="ShapeLocation">136.5,626</av:Point>
-                                                <av:Size x:Key="ShapeSize">127,115</av:Size>
-                                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                <av:PointCollection x:Key="FalseConnector">263.5,683.5 393.5,683.5</av:PointCollection>
-                                                <x:String x:Key="FalseLabel">Hayır</x:String>
-                                                <x:String x:Key="TrueLabel">Evet</x:String>
-                                                <av:PointCollection x:Key="TrueConnector">136.5,683.5 50,683.5 50,818.02 80,818.02</av:PointCollection>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                            <FlowDecision.True>
-                                              <FlowStep x:Name="__ReferenceID18">
-                                                <sap:WorkflowViewStateService.ViewState>
-                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <av:Point x:Key="ShapeLocation">80,778.02</av:Point>
-                                                    <av:Size x:Key="ShapeSize">200,80</av:Size>
-                                                    <av:PointCollection x:Key="ConnectorLocation">280,818.02 380,818.02</av:PointCollection>
-                                                  </scg:Dictionary>
-                                                </sap:WorkflowViewStateService.ViewState>
-                                                <ui:LogMessage sap2010:Annotation.AnnotationText="ek sayısı" DisplayName="Günlük Mesajı" sap:VirtualizedContainerService.HintSize="200,80" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Info" Message="[&quot;Ek sayısı kontrolü yapıldı&quot;]">
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                </ui:LogMessage>
-                                                <FlowStep.Next>
-                                                  <FlowStep x:Name="__ReferenceID14">
-                                                    <sap:WorkflowViewStateService.ViewState>
-                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                        <av:Point x:Key="ShapeLocation">380,770.02</av:Point>
-                                                        <av:Size x:Key="ShapeSize">200,96</av:Size>
-                                                        <av:PointCollection x:Key="ConnectorLocation">480,866.02 480,926.5</av:PointCollection>
-                                                      </scg:Dictionary>
-                                                    </sap:WorkflowViewStateService.ViewState>
-                                                    <Sequence sap2010:Annotation.AnnotationText="Ek uzantısını kontrol eder" DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="200,96" sap2010:WorkflowViewState.IdRef="Sequence_104">
-                                                      <sap:WorkflowViewStateService.ViewState>
-                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                        </scg:Dictionary>
-                                                      </sap:WorkflowViewStateService.ViewState>
-                                                      <ui:ForEach x:TypeArguments="snm:Attachment" CurrentIndex="{x:Null}" DisplayName="Döngü" sap:VirtualizedContainerService.HintSize="689,591" sap2010:WorkflowViewState.IdRef="ForEach`1_10" Values="[mail.Attachments]">
-                                                        <ui:ForEach.Body>
-                                                          <ActivityAction x:TypeArguments="snm:Attachment">
-                                                            <ActivityAction.Argument>
-                                                              <DelegateInArgument x:TypeArguments="snm:Attachment" Name="item" />
-                                                            </ActivityAction.Argument>
-                                                            <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="653,456" sap2010:WorkflowViewState.IdRef="Sequence_105">
-                                                              <sap:WorkflowViewStateService.ViewState>
-                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                </scg:Dictionary>
-                                                              </sap:WorkflowViewStateService.ViewState>
-                                                              <If Condition="[CStr(RulesDataTable.Rows(rulesIndex)(&quot;Ek uzantısı&quot;)).ToLower.Contains(item.Name.ToLower.Substring(item.Name.LastIndexOf(&quot;.&quot;)+1))]" DisplayName="Eğer" sap:VirtualizedContainerService.HintSize="611,364" sap2010:WorkflowViewState.IdRef="If_45">
-                                                                <If.Then>
-                                                                  <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_60">
-                                                                    <Assign.To>
-                                                                      <OutArgument x:TypeArguments="x:Boolean">[isMatch]</OutArgument>
-                                                                    </Assign.To>
-                                                                    <Assign.Value>
-                                                                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                                                                    </Assign.Value>
-                                                                  </Assign>
-                                                                </If.Then>
-                                                                <If.Else>
-                                                                  <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_106">
-                                                                    <sap:WorkflowViewStateService.ViewState>
-                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                      </scg:Dictionary>
-                                                                    </sap:WorkflowViewStateService.ViewState>
-                                                                    <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_61">
-                                                                      <Assign.To>
-                                                                        <OutArgument x:TypeArguments="x:Boolean">[isMatch]</OutArgument>
-                                                                      </Assign.To>
-                                                                      <Assign.Value>
-                                                                        <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                                                                      </Assign.Value>
-                                                                    </Assign>
-                                                                    <ui:Break sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Break_8" />
-                                                                  </Sequence>
-                                                                </If.Else>
-                                                              </If>
-                                                            </Sequence>
-                                                          </ActivityAction>
-                                                        </ui:ForEach.Body>
-                                                        <sap:WorkflowViewStateService.ViewState>
-                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                          </scg:Dictionary>
-                                                        </sap:WorkflowViewStateService.ViewState>
-                                                      </ui:ForEach>
-                                                    </Sequence>
-                                                    <FlowStep.Next>
-                                                      <FlowDecision x:Name="__ReferenceID9" Condition="[isMatch]" DisplayName="Kontrol" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_8">
-                                                        <sap:WorkflowViewStateService.ViewState>
-                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                            <av:Point x:Key="ShapeLocation">445,926.5</av:Point>
-                                                            <av:Size x:Key="ShapeSize">70,87</av:Size>
-                                                            <av:PointCollection x:Key="TrueConnector">445,970 280,970</av:PointCollection>
-                                                            <x:String x:Key="FalseLabel">Yanlış</x:String>
-                                                            <x:String x:Key="TrueLabel">Doğru</x:String>
-                                                            <av:PointCollection x:Key="FalseConnector">515,970 690,970</av:PointCollection>
-                                                          </scg:Dictionary>
-                                                        </sap:WorkflowViewStateService.ViewState>
-                                                        <FlowDecision.True>
-                                                          <FlowStep x:Name="__ReferenceID15">
-                                                            <sap:WorkflowViewStateService.ViewState>
-                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                <av:Point x:Key="ShapeLocation">80,914</av:Point>
-                                                                <av:Size x:Key="ShapeSize">200,112</av:Size>
-                                                                <av:PointCollection x:Key="ConnectorLocation">180,1026 180,1076</av:PointCollection>
-                                                              </scg:Dictionary>
-                                                            </sap:WorkflowViewStateService.ViewState>
-                                                            <Sequence sap2010:Annotation.AnnotationText="Sablon kontrolleri bu kısımda yapılır." DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="200,112" sap2010:WorkflowViewState.IdRef="Sequence_113">
-                                                              <Sequence.Variables>
-                                                                <Variable x:TypeArguments="s:String[]" Name="arraySample" />
-                                                                <Variable x:TypeArguments="x:Boolean" Name="errorFound" />
-                                                                <Variable x:TypeArguments="x:Int32" Name="errorIndex" />
-                                                              </Sequence.Variables>
-                                                              <sap:WorkflowViewStateService.ViewState>
-                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                                </scg:Dictionary>
-                                                              </sap:WorkflowViewStateService.ViewState>
-                                                              <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="761,60" sap2010:WorkflowViewState.IdRef="Assign_68">
-                                                                <Assign.To>
-                                                                  <OutArgument x:TypeArguments="s:String[]">[arraySample]</OutArgument>
-                                                                </Assign.To>
-                                                                <Assign.Value>
-                                                                  <InArgument x:TypeArguments="s:String[]">[RulesDataTable.Rows(rulesIndex)("Örnek dosya").ToString.Trim(";"C).Split(";"C)]</InArgument>
-                                                                </Assign.Value>
-                                                              </Assign>
-                                                              <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="761,60" sap2010:WorkflowViewState.IdRef="Assign_70">
-                                                                <Assign.To>
-                                                                  <OutArgument x:TypeArguments="x:Int32">[errorIndex]</OutArgument>
-                                                                </Assign.To>
-                                                                <Assign.Value>
-                                                                  <InArgument x:TypeArguments="x:Int32">0</InArgument>
-                                                                </Assign.Value>
-                                                              </Assign>
-                                                              <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="Döngü" sap:VirtualizedContainerService.HintSize="761,3550" sap2010:WorkflowViewState.IdRef="ForEach`1_12" Values="[arraySample]">
-                                                                <ui:ForEach.Body>
-                                                                  <ActivityAction x:TypeArguments="x:String">
-                                                                    <ActivityAction.Argument>
-                                                                      <DelegateInArgument x:TypeArguments="x:String" Name="sampleTable" />
-                                                                    </ActivityAction.Argument>
-                                                                    <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="725,3415" sap2010:WorkflowViewState.IdRef="Sequence_116">
-                                                                      <Sequence.Variables>
-                                                                        <Variable x:TypeArguments="x:Boolean" Name="pathExists" />
-                                                                      </Sequence.Variables>
-                                                                      <sap:WorkflowViewStateService.ViewState>
-                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                        </scg:Dictionary>
-                                                                      </sap:WorkflowViewStateService.ViewState>
-                                                                      <If Condition="[arraySample(0).ToString=&quot;&quot;]" DisplayName="Eğer" sap:VirtualizedContainerService.HintSize="683,364" sap2010:WorkflowViewState.IdRef="If_53">
-                                                                        <If.Then>
-                                                                          <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_127">
-                                                                            <sap:WorkflowViewStateService.ViewState>
-                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                              </scg:Dictionary>
-                                                                            </sap:WorkflowViewStateService.ViewState>
-                                                                            <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_84">
-                                                                              <Assign.To>
-                                                                                <OutArgument x:TypeArguments="x:String">[status]</OutArgument>
-                                                                              </Assign.To>
-                                                                              <Assign.Value>
-                                                                                <InArgument x:TypeArguments="x:String">Hata alındı</InArgument>
-                                                                              </Assign.Value>
-                                                                            </Assign>
-                                                                            <Throw DisplayName="Fırlat" Exception="[New Exception(&quot;Mail eki bulunamadı.&quot;)]" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Throw_45" />
-                                                                          </Sequence>
-                                                                        </If.Then>
-                                                                      </If>
-                                                                      <ui:PathExists DisplayName="Yol Var mı?" Exists="[pathExists]" sap:VirtualizedContainerService.HintSize="683,90" sap2010:WorkflowViewState.IdRef="PathExists_5" Path="[Io.Path.Combine(resourceLocation, sampleTable)]" PathType="File" />
-                                                                      <If Condition="[pathExists]" DisplayName="Eğer" sap:VirtualizedContainerService.HintSize="683,364" sap2010:WorkflowViewState.IdRef="If_57">
-                                                                        <If.Then>
-                                                                          <ui:ReadRange AddHeaders="True" DataTable="[dataTableSample]" DisplayName="Aralığı Oku" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[Io.Path.Combine(resourceLocation, sampleTable)]">
-                                                                            <ui:ReadRange.Range>
-                                                                              <InArgument x:TypeArguments="x:String">
-                                                                                <Literal x:TypeArguments="x:String" Value="" />
-                                                                              </InArgument>
-                                                                            </ui:ReadRange.Range>
-                                                                          </ui:ReadRange>
-                                                                        </If.Then>
-                                                                        <If.Else>
-                                                                          <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_133">
-                                                                            <sap:WorkflowViewStateService.ViewState>
-                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                              </scg:Dictionary>
-                                                                            </sap:WorkflowViewStateService.ViewState>
-                                                                            <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_85">
-                                                                              <Assign.To>
-                                                                                <OutArgument x:TypeArguments="x:String">[status]</OutArgument>
-                                                                              </Assign.To>
-                                                                              <Assign.Value>
-                                                                                <InArgument x:TypeArguments="x:String">Hata alındı</InArgument>
-                                                                              </Assign.Value>
-                                                                            </Assign>
-                                                                            <Throw DisplayName="Hata Fırlat" Exception="[New Exception(&quot;belirtilen dosya adı bulunamadı.&quot;)]" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Throw_46" />
-                                                                          </Sequence>
-                                                                        </If.Else>
-                                                                      </If>
-                                                                      <ui:ForEach x:TypeArguments="snm:Attachment" CurrentIndex="{x:Null}" DisplayName="Döngü" sap:VirtualizedContainerService.HintSize="683,2385" sap2010:WorkflowViewState.IdRef="ForEach`1_14" Values="[mail.Attachments]">
-                                                                        <ui:ForEach.Body>
-                                                                          <ActivityAction x:TypeArguments="snm:Attachment">
-                                                                            <ActivityAction.Argument>
-                                                                              <DelegateInArgument x:TypeArguments="snm:Attachment" Name="excelTable" />
-                                                                            </ActivityAction.Argument>
-                                                                            <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="574,2250" sap2010:WorkflowViewState.IdRef="Sequence_120">
-                                                                              <sap:WorkflowViewStateService.ViewState>
-                                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                </scg:Dictionary>
-                                                                              </sap:WorkflowViewStateService.ViewState>
-                                                                              <ui:ReadRange AddHeaders="True" DataTable="[dataTableAttachment]" DisplayName="Aralığı Oku" sap:VirtualizedContainerService.HintSize="532,87" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="Sheet1" WorkbookPath="[Io.Path.Combine(workingDirectory, excelTable.Name)]">
-                                                                                <ui:ReadRange.Range>
-                                                                                  <InArgument x:TypeArguments="x:String">
-                                                                                    <Literal x:TypeArguments="x:String" Value="" />
-                                                                                  </InArgument>
-                                                                                </ui:ReadRange.Range>
-                                                                              </ui:ReadRange>
-                                                                              <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="532,60" sap2010:WorkflowViewState.IdRef="Assign_71">
-                                                                                <Assign.To>
-                                                                                  <OutArgument x:TypeArguments="x:Boolean">[errorFound]</OutArgument>
-                                                                                </Assign.To>
-                                                                                <Assign.Value>
-                                                                                  <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                                                                                </Assign.Value>
-                                                                              </Assign>
-                                                                              <ui:ForEach x:TypeArguments="sd:DataColumn" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="&#xA;Gelen Excel'in sütunlarında gezin.&#xA;" DisplayName="Gezin" sap:VirtualizedContainerService.HintSize="532,635" sap2010:WorkflowViewState.IdRef="ForEach`1_15" Values="[dataTableAttachment.Columns]">
-                                                                                <ui:ForEach.Body>
-                                                                                  <ActivityAction x:TypeArguments="sd:DataColumn">
-                                                                                    <ActivityAction.Argument>
-                                                                                      <DelegateInArgument x:TypeArguments="sd:DataColumn" Name="column" />
-                                                                                    </ActivityAction.Argument>
-                                                                                    <If sap2010:Annotation.AnnotationText="&#xA;Sütun adı, beklenen Excel'deki sütun adları arasında yer alıyor mu bak, yer almıyorsa hata ver.&#xA;" Condition="[Not dataTableSample.Columns.Contains(column.ColumnName)]" DisplayName="Eğer" sap:VirtualizedContainerService.HintSize="484,440" sap2010:WorkflowViewState.IdRef="If_46">
-                                                                                      <sap:WorkflowViewStateService.ViewState>
-                                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                        </scg:Dictionary>
-                                                                                      </sap:WorkflowViewStateService.ViewState>
-                                                                                      <If.Then>
-                                                                                        <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_117">
-                                                                                          <sap:WorkflowViewStateService.ViewState>
-                                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                            </scg:Dictionary>
-                                                                                          </sap:WorkflowViewStateService.ViewState>
-                                                                                          <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_72">
-                                                                                            <Assign.To>
-                                                                                              <OutArgument x:TypeArguments="x:Boolean">[errorFound]</OutArgument>
-                                                                                            </Assign.To>
-                                                                                            <Assign.Value>
-                                                                                              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                                                                                            </Assign.Value>
-                                                                                          </Assign>
-                                                                                          <ui:Break DisplayName="Bırak" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Break_10" />
-                                                                                        </Sequence>
-                                                                                      </If.Then>
-                                                                                    </If>
-                                                                                  </ActivityAction>
-                                                                                </ui:ForEach.Body>
-                                                                                <sap:WorkflowViewStateService.ViewState>
-                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                                                  </scg:Dictionary>
-                                                                                </sap:WorkflowViewStateService.ViewState>
-                                                                              </ui:ForEach>
-                                                                              <If Condition="[errorFound]" DisplayName="Eğer" sap:VirtualizedContainerService.HintSize="532,210" sap2010:WorkflowViewState.IdRef="If_49">
-                                                                                <If.Then>
-                                                                                  <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_75">
-                                                                                    <Assign.To>
-                                                                                      <OutArgument x:TypeArguments="x:Int32">[errorIndex]</OutArgument>
-                                                                                    </Assign.To>
-                                                                                    <Assign.Value>
-                                                                                      <InArgument x:TypeArguments="x:Int32">[errorIndex+1]</InArgument>
-                                                                                    </Assign.Value>
-                                                                                  </Assign>
-                                                                                </If.Then>
-                                                                              </If>
-                                                                              <If sap2010:Annotation.AnnotationText="&#xA;Eksik sütun varsa maili yanıtla ve devam et.&#xA;" Condition="[errorFound and errorIndex &gt;= mail.Attachments.Count]" DisplayName="Eğer" sap:VirtualizedContainerService.HintSize="532,483" sap2010:WorkflowViewState.IdRef="If_47">
-                                                                                <sap:WorkflowViewStateService.ViewState>
-                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                  </scg:Dictionary>
-                                                                                </sap:WorkflowViewStateService.ViewState>
-                                                                                <If.Then>
-                                                                                  <Sequence sap2010:Annotation.AnnotationText="&#xA;Hata maili at ve devam et.&#xA;" DisplayName="Mail at" sap:VirtualizedContainerService.HintSize="387,273" sap2010:WorkflowViewState.IdRef="Sequence_118">
-                                                                                    <sap:WorkflowViewStateService.ViewState>
-                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                                                      </scg:Dictionary>
-                                                                                    </sap:WorkflowViewStateService.ViewState>
-                                                                                    <ui:ReadTextFile Content="[mailBody]" DisplayName="Metin dosyasını oku" Encoding="utf-8" FileName="[Io.Path.Combine(resourceLocation, GeneralDataTable.Rows(0)(&quot;Hata iletisi&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="345,59" sap2010:WorkflowViewState.IdRef="ReadTextFile_18">
-                                                                                      <sap:WorkflowViewStateService.ViewState>
-                                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                        </scg:Dictionary>
-                                                                                      </sap:WorkflowViewStateService.ViewState>
-                                                                                    </ui:ReadTextFile>
-                                                                                    <Throw DisplayName="Hata Fırlat" Exception="[New Exception(&quot;Ekteki sütunlar hatalı.&quot;)]" sap:VirtualizedContainerService.HintSize="345,22" sap2010:WorkflowViewState.IdRef="Throw_42" />
-                                                                                  </Sequence>
-                                                                                </If.Then>
-                                                                              </If>
-                                                                              <If sap2010:Annotation.AnnotationText="&#xA;Kayıt yoksa maili yanıtla ve devam et.&#xA;" Condition="[dataTableAttachment.Rows.Count &lt; 1]" DisplayName="Eğer" sap:VirtualizedContainerService.HintSize="532,483" sap2010:WorkflowViewState.IdRef="If_48">
-                                                                                <sap:WorkflowViewStateService.ViewState>
-                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                  </scg:Dictionary>
-                                                                                </sap:WorkflowViewStateService.ViewState>
-                                                                                <If.Then>
-                                                                                  <Sequence sap2010:Annotation.AnnotationText="&#xA;Hata maili at ve devam et.&#xA;" DisplayName="Mail at" sap:VirtualizedContainerService.HintSize="387,273" sap2010:WorkflowViewState.IdRef="Sequence_119">
-                                                                                    <sap:WorkflowViewStateService.ViewState>
-                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                                                      </scg:Dictionary>
-                                                                                    </sap:WorkflowViewStateService.ViewState>
-                                                                                    <ui:ReadTextFile Content="[mailBody]" DisplayName="Metin dosyasını oku" Encoding="utf-8" FileName="[Io.Path.Combine(resourceLocation, GeneralDataTable.Rows(0)(&quot;Hata iletisi&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="345,59" sap2010:WorkflowViewState.IdRef="ReadTextFile_19">
-                                                                                      <sap:WorkflowViewStateService.ViewState>
-                                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                        </scg:Dictionary>
-                                                                                      </sap:WorkflowViewStateService.ViewState>
-                                                                                    </ui:ReadTextFile>
-                                                                                    <Throw DisplayName="Hata Fırlat" Exception="[new Exception(&quot;Mail ekindeki dosyada kayıt bulunamadı.&quot;)]" sap:VirtualizedContainerService.HintSize="345,22" sap2010:WorkflowViewState.IdRef="Throw_43" />
-                                                                                  </Sequence>
-                                                                                </If.Then>
-                                                                              </If>
-                                                                            </Sequence>
-                                                                          </ActivityAction>
-                                                                        </ui:ForEach.Body>
-                                                                      </ui:ForEach>
-                                                                    </Sequence>
-                                                                  </ActivityAction>
-                                                                </ui:ForEach.Body>
-                                                              </ui:ForEach>
-                                                              <ui:LogMessage DisplayName="Günlük Kontrolü" sap:VirtualizedContainerService.HintSize="761,93" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[&quot;Ek dosya kontolleri tamamlandı&quot;]" />
-                                                            </Sequence>
-                                                            <FlowStep.Next>
-                                                              <FlowStep x:Name="__ReferenceID16">
-                                                                <sap:WorkflowViewStateService.ViewState>
-                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                    <av:Point x:Key="ShapeLocation">80,1076</av:Point>
-                                                                    <av:Size x:Key="ShapeSize">200,96</av:Size>
-                                                                  </scg:Dictionary>
-                                                                </sap:WorkflowViewStateService.ViewState>
-                                                                <Sequence sap2010:Annotation.AnnotationText="Zorunlu alanlar kontrol" DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="885,1576" sap2010:WorkflowViewState.IdRef="Sequence_121">
-                                                                  <Sequence.Variables>
-                                                                    <Variable x:TypeArguments="x:Int32" Name="index" />
-                                                                  </Sequence.Variables>
-                                                                  <sap:WorkflowViewStateService.ViewState>
-                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                                    </scg:Dictionary>
-                                                                  </sap:WorkflowViewStateService.ViewState>
-                                                                  <ui:ForEach x:TypeArguments="snm:Attachment" CurrentIndex="{x:Null}" DisplayName="Döngü" sap:VirtualizedContainerService.HintSize="843,1323" sap2010:WorkflowViewState.IdRef="ForEach`1_16" Values="[mail.Attachments]">
-                                                                    <ui:ForEach.Body>
-                                                                      <ActivityAction x:TypeArguments="snm:Attachment">
-                                                                        <ActivityAction.Argument>
-                                                                          <DelegateInArgument x:TypeArguments="snm:Attachment" Name="item" />
-                                                                        </ActivityAction.Argument>
-                                                                        <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="807,1188" sap2010:WorkflowViewState.IdRef="Sequence_124">
-                                                                          <sap:WorkflowViewStateService.ViewState>
-                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                            </scg:Dictionary>
-                                                                          </sap:WorkflowViewStateService.ViewState>
-                                                                          <ui:ReadRange AddHeaders="True" DataTable="[dataTableAttachment]" DisplayName="Aralığı Oku" sap:VirtualizedContainerService.HintSize="765,87" sap2010:WorkflowViewState.IdRef="ReadRange_5" SheetName="Sheet1" WorkbookPath="[Io.Path.Combine(workingDirectory, item.Name)]">
-                                                                            <ui:ReadRange.Range>
-                                                                              <InArgument x:TypeArguments="x:String">
-                                                                                <Literal x:TypeArguments="x:String" Value="" />
-                                                                              </InArgument>
-                                                                            </ui:ReadRange.Range>
-                                                                          </ui:ReadRange>
-                                                                          <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="765,60" sap2010:WorkflowViewState.IdRef="Assign_82">
-                                                                            <Assign.To>
-                                                                              <OutArgument x:TypeArguments="x:Int32">[columnIndex]</OutArgument>
-                                                                            </Assign.To>
-                                                                            <Assign.Value>
-                                                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
-                                                                            </Assign.Value>
-                                                                          </Assign>
-                                                                          <While DisplayName="Döngü" sap:VirtualizedContainerService.HintSize="765,869" sap2010:WorkflowViewState.IdRef="While_4" Condition="[columnIndex &lt; dataTableSample.Columns.Count]">
-                                                                            <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="719,709" sap2010:WorkflowViewState.IdRef="Sequence_122">
-                                                                              <sap:WorkflowViewStateService.ViewState>
-                                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                </scg:Dictionary>
-                                                                              </sap:WorkflowViewStateService.ViewState>
-                                                                              <If Condition="[dataTableSample.Rows(0)(columnIndex).ToString = &quot;zorunludur&quot;]" DisplayName="Eğer" sap:VirtualizedContainerService.HintSize="677,517" sap2010:WorkflowViewState.IdRef="If_51">
-                                                                                <If.Then>
-                                                                                  <If Condition="[dataTableAttachment.Rows(0)(columnIndex).ToString.Trim = &quot;zorunludur&quot; Or&#xA;dataTableAttachment.Rows(0)(columnIndex).ToString.Trim = &quot;&quot; Or&#xA;dataTableAttachment.Rows(0)(columnIndex).ToString.Trim = String.Empty Or&#xA;dataTableAttachment.Rows(0)(columnIndex).ToString.Trim = Nothing]" DisplayName="Eğer" sap:VirtualizedContainerService.HintSize="532,367" sap2010:WorkflowViewState.IdRef="If_50">
-                                                                                    <If.Then>
-                                                                                      <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="387,213" sap2010:WorkflowViewState.IdRef="Sequence_123">
-                                                                                        <sap:WorkflowViewStateService.ViewState>
-                                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                          </scg:Dictionary>
-                                                                                        </sap:WorkflowViewStateService.ViewState>
-                                                                                        <ui:ReadTextFile Content="[mailBody]" DisplayName="Metin dosyasını oku" Encoding="utf-8" FileName="[Io.Path.Combine(resourceLocation, GeneralDataTable.Rows(0)(&quot;Hata iletisi&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="345,59" sap2010:WorkflowViewState.IdRef="ReadTextFile_20">
-                                                                                          <sap:WorkflowViewStateService.ViewState>
-                                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                            </scg:Dictionary>
-                                                                                          </sap:WorkflowViewStateService.ViewState>
-                                                                                        </ui:ReadTextFile>
-                                                                                        <Throw DisplayName="Hata Ver" Exception="[New Exception(dataTableSample.Columns(columnIndex).ColumnName + &quot; zorunlu alandır.&quot;)]" sap:VirtualizedContainerService.HintSize="345,22" sap2010:WorkflowViewState.IdRef="Throw_44" />
-                                                                                      </Sequence>
-                                                                                    </If.Then>
-                                                                                  </If>
-                                                                                </If.Then>
-                                                                              </If>
-                                                                              <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="677,60" sap2010:WorkflowViewState.IdRef="Assign_77">
-                                                                                <Assign.To>
-                                                                                  <OutArgument x:TypeArguments="x:Int32">[columnIndex]</OutArgument>
-                                                                                </Assign.To>
-                                                                                <Assign.Value>
-                                                                                  <InArgument x:TypeArguments="x:Int32">[columnIndex+1]</InArgument>
-                                                                                </Assign.Value>
-                                                                              </Assign>
-                                                                            </Sequence>
-                                                                          </While>
-                                                                        </Sequence>
-                                                                      </ActivityAction>
-                                                                    </ui:ForEach.Body>
-                                                                  </ui:ForEach>
-                                                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="843,93" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="Info" Message="[&quot;Ek dosya içerik kontrolü tamamlandı&quot;]" />
-                                                                </Sequence>
-                                                              </FlowStep>
-                                                            </FlowStep.Next>
-                                                          </FlowStep>
-                                                        </FlowDecision.True>
-                                                        <FlowDecision.False>
-                                                          <FlowStep x:Name="__ReferenceID10">
-                                                            <sap:WorkflowViewStateService.ViewState>
-                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                <av:Point x:Key="ShapeLocation">690,922</av:Point>
-                                                                <av:Size x:Key="ShapeSize">200,96</av:Size>
-                                                                <av:PointCollection x:Key="ConnectorLocation">890,970 970,970</av:PointCollection>
-                                                              </scg:Dictionary>
-                                                            </sap:WorkflowViewStateService.ViewState>
-                                                            <ui:ReadTextFile sap2010:Annotation.AnnotationText="kaynak klasöründen ilgili hata mesajını okur." Content="[mailBody]" DisplayName="Metin dosyasını oku" Encoding="utf-8" FileName="[Io.Path.Combine(resourceLocation, &quot;mail_error.txt&quot;)]" sap:VirtualizedContainerService.HintSize="200,96" sap2010:WorkflowViewState.IdRef="ReadTextFile_15">
-                                                              <sap:WorkflowViewStateService.ViewState>
-                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                                </scg:Dictionary>
-                                                              </sap:WorkflowViewStateService.ViewState>
-                                                            </ui:ReadTextFile>
-                                                            <FlowStep.Next>
-                                                              <FlowStep x:Name="__ReferenceID11">
-                                                                <sap:WorkflowViewStateService.ViewState>
-                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                    <av:Point x:Key="ShapeLocation">970,959</av:Point>
-                                                                    <av:Size x:Key="ShapeSize">200,22</av:Size>
-                                                                  </scg:Dictionary>
-                                                                </sap:WorkflowViewStateService.ViewState>
-                                                                <Throw DisplayName="Hata Ver" Exception="[New Exception(&quot;ek uzantılarda uyumazlık var.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_38">
-                                                                  <sap:WorkflowViewStateService.ViewState>
-                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                    </scg:Dictionary>
-                                                                  </sap:WorkflowViewStateService.ViewState>
-                                                                </Throw>
-                                                              </FlowStep>
-                                                            </FlowStep.Next>
-                                                          </FlowStep>
-                                                        </FlowDecision.False>
-                                                      </FlowDecision>
-                                                    </FlowStep.Next>
-                                                  </FlowStep>
-                                                </FlowStep.Next>
-                                              </FlowStep>
-                                            </FlowDecision.True>
-                                            <FlowDecision.False>
-                                              <FlowStep x:Name="__ReferenceID7">
-                                                <sap:WorkflowViewStateService.ViewState>
-                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <av:Point x:Key="ShapeLocation">393.5,635.5</av:Point>
-                                                    <av:Size x:Key="ShapeSize">200,96</av:Size>
-                                                    <av:PointCollection x:Key="ConnectorLocation">593.5,683.5 683.5,683.5</av:PointCollection>
-                                                  </scg:Dictionary>
-                                                </sap:WorkflowViewStateService.ViewState>
-                                                <ui:ReadTextFile sap2010:Annotation.AnnotationText="kaynak klasöründen ilgili hata mesajını okur." Content="[mailBody]" DisplayName="Metin dosyasını oku" Encoding="utf-8" FileName="[Io.Path.Combine(resourceLocation, &quot;mail_error.txt&quot;)]" sap:VirtualizedContainerService.HintSize="200,96" sap2010:WorkflowViewState.IdRef="ReadTextFile_14">
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                </ui:ReadTextFile>
-                                                <FlowStep.Next>
-                                                  <FlowStep x:Name="__ReferenceID8">
-                                                    <sap:WorkflowViewStateService.ViewState>
-                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                        <av:Point x:Key="ShapeLocation">683.5,672.5</av:Point>
-                                                        <av:Size x:Key="ShapeSize">200,22</av:Size>
-                                                      </scg:Dictionary>
-                                                    </sap:WorkflowViewStateService.ViewState>
-                                                    <Throw DisplayName="Hata Ver" Exception="[New Exception(&quot;ek sayısı farklı olamaz.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_37">
-                                                      <sap:WorkflowViewStateService.ViewState>
-                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                        </scg:Dictionary>
-                                                      </sap:WorkflowViewStateService.ViewState>
-                                                    </Throw>
-                                                  </FlowStep>
-                                                </FlowStep.Next>
-                                              </FlowStep>
-                                            </FlowDecision.False>
-                                          </FlowDecision>
-                                        </FlowStep.Next>
-                                      </FlowStep>
-                                    </FlowStep.Next>
-                                  </FlowStep>
-                                </FlowDecision.True>
-                                <FlowDecision.False>
-                                  <FlowStep x:Name="__ReferenceID5">
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <av:Point x:Key="ShapeLocation">672,450</av:Point>
-                                        <av:Size x:Key="ShapeSize">262,60</av:Size>
-                                        <av:PointCollection x:Key="ConnectorLocation">934,480 1014,480</av:PointCollection>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                    <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_54">
-                                      <Assign.To>
-                                        <OutArgument x:TypeArguments="x:String">[mailBody]</OutArgument>
-                                      </Assign.To>
-                                      <Assign.Value>
-                                        <InArgument x:TypeArguments="x:String">[Nothing]</InArgument>
-                                      </Assign.Value>
-                                    </Assign>
-                                    <FlowStep.Next>
-                                      <FlowStep x:Name="__ReferenceID4">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <av:Point x:Key="ShapeLocation">1014,469</av:Point>
-                                            <av:Size x:Key="ShapeSize">200,22</av:Size>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <Throw DisplayName="Hata Ver" Exception="[New Exception(&quot;Konu alanı boş olamaz.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_36">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                        </Throw>
-                                      </FlowStep>
-                                    </FlowStep.Next>
-                                  </FlowStep>
-                                </FlowDecision.False>
-                              </FlowDecision>
-                            </FlowStep.Next>
-                          </FlowStep>
-                        </FlowStep.Next>
-                      </FlowStep>
-                    </FlowDecision.True>
-                    <FlowDecision.False>
-                      <FlowStep x:Name="__ReferenceID1">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <av:Point x:Key="ShapeLocation">656,130</av:Point>
-                            <av:Size x:Key="ShapeSize">262,60</av:Size>
-                            <av:PointCollection x:Key="ConnectorLocation">918,160 980,160</av:PointCollection>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_49">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="x:String">[mailBody]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="x:String">[Nothing]</InArgument>
-                          </Assign.Value>
-                        </Assign>
-                        <FlowStep.Next>
-                          <FlowStep x:Name="__ReferenceID0">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <av:Point x:Key="ShapeLocation">980,149</av:Point>
-                                <av:Size x:Key="ShapeSize">200,22</av:Size>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <Throw DisplayName="Hata Ver" Exception="[new Exception(&quot;Kimden alanı boş olamaz.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_34">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </Throw>
-                          </FlowStep>
-                        </FlowStep.Next>
-                      </FlowStep>
-                    </FlowDecision.False>
-                  </FlowDecision>
-                  <x:Reference>__ReferenceID0</x:Reference>
-                  <x:Reference>__ReferenceID1</x:Reference>
-                  <x:Reference>__ReferenceID2</x:Reference>
-                  <x:Reference>__ReferenceID3</x:Reference>
-                  <x:Reference>__ReferenceID4</x:Reference>
-                  <x:Reference>__ReferenceID5</x:Reference>
-                  <x:Reference>__ReferenceID6</x:Reference>
-                  <x:Reference>__ReferenceID7</x:Reference>
-                  <x:Reference>__ReferenceID8</x:Reference>
-                  <x:Reference>__ReferenceID9</x:Reference>
-                  <x:Reference>__ReferenceID10</x:Reference>
-                  <x:Reference>__ReferenceID11</x:Reference>
-                  <x:Reference>__ReferenceID12</x:Reference>
-                  <x:Reference>__ReferenceID13</x:Reference>
-                  <x:Reference>__ReferenceID14</x:Reference>
-                  <x:Reference>__ReferenceID15</x:Reference>
-                  <x:Reference>__ReferenceID16</x:Reference>
-                  <x:Reference>__ReferenceID17</x:Reference>
-                  <x:Reference>__ReferenceID18</x:Reference>
-                </Flowchart>
-                <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_79">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="x:String">[status]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">Tamamlandı</InArgument>
-                  </Assign.Value>
-                </Assign>
-                <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_20">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="x:String">[result]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">Talep işleme alınmıştır.</InArgument>
-                  </Assign.Value>
-                </Assign>
-                <ui:LogMessage DisplayName="Günlük Mesajı" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="Info" Message="[&quot;Süreç başarılı. Talep işleme alınmıştır.&quot;]" />
-                <Sequence sap2010:Annotation.AnnotationText="tüm kontroller başarılı ise talepçiye &quot;Talebiniz işleme alınmıştır.&quot; mailini gönderir. " DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="334,128" sap2010:WorkflowViewState.IdRef="Sequence_52">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:ReadTextFile Content="[mailBody]" DisplayName="Metin dosyasını oku" Encoding="utf-8" FileName="[Io.Path.Combine(resourceLocation, GeneralDataTable.Rows(0)(&quot;Başarılı iletisi&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="345,59" sap2010:WorkflowViewState.IdRef="ReadTextFile_13">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:ReadTextFile>
-                  <ui:ReplyToOutlookMailMessage TimeoutMS="{x:Null}" Body="[mailBody]" DisplayName="Outlook iletisini yanıtla" sap:VirtualizedContainerService.HintSize="345,118" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_10" MailMessage="[mail]" ReplyAll="False">
-                    <ui:ReplyToOutlookMailMessage.Files>
-                      <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-                    </ui:ReplyToOutlookMailMessage.Files>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:ReplyToOutlookMailMessage>
-                </Sequence>
-              </Sequence>
-            </TryCatch.Try>
-            <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,22" sap2010:WorkflowViewState.IdRef="Catch`1_3">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <ActivityAction x:TypeArguments="s:Exception">
-                  <ActivityAction.Argument>
-                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                  </ActivityAction.Argument>
-                  <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="563,68" sap2010:WorkflowViewState.IdRef="Sequence_55">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="521,60" sap2010:WorkflowViewState.IdRef="Assign_21">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:String">[result]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">[exception.Message]</InArgument>
-                      </Assign.Value>
-                    </Assign>
-                    <ui:LogMessage DisplayName="Günlük Mesajı" sap:VirtualizedContainerService.HintSize="521,93" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Error" Message="[result]" />
-                    <If Condition="[Not mailBody is Nothing]" DisplayName="Eğer" sap:VirtualizedContainerService.HintSize="521,460" sap2010:WorkflowViewState.IdRef="If_22">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <If.Then>
-                        <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="376,310" sap2010:WorkflowViewState.IdRef="Sequence_51">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_80">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:String">[status]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:String">["Hata alındı"]</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                          <ui:ReplyToOutlookMailMessage TimeoutMS="{x:Null}" Body="[mailBody]" DisplayName="Outlook iletisini yanıtla" sap:VirtualizedContainerService.HintSize="334,118" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_11" MailMessage="[mail]" ReplyAll="False">
-                            <ui:ReplyToOutlookMailMessage.Files>
-                              <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-                            </ui:ReplyToOutlookMailMessage.Files>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </ui:ReplyToOutlookMailMessage>
-                        </Sequence>
-                      </If.Then>
-                    </If>
-                  </Sequence>
-                </ActivityAction>
-              </Catch>
-            </TryCatch.Catches>
-            <TryCatch.Finally>
-              <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="563,1429" sap2010:WorkflowViewState.IdRef="Sequence_54">
-                <Sequence.Variables>
-                  <Variable x:TypeArguments="sd:DataTable" Name="logsBase" />
-                </Sequence.Variables>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <Sequence sap2010:Annotation.AnnotationText="&quot;Günlük&quot; excelini kontrol eder. yok ise oluşturur ve kolonları ekler." DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="521,128" sap2010:WorkflowViewState.IdRef="Sequence_58">
-                  <Sequence.Variables>
-                    <Variable x:TypeArguments="x:Boolean" Name="logPath" />
-                  </Sequence.Variables>
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:PathExists DisplayName="Yol varmı?" Exists="[logPath]" sap:VirtualizedContainerService.HintSize="621,52" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[Io.Path.Combine(resourceLocation, &quot;Günlükler.xlsx&quot;)]" PathType="File">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:PathExists>
-                  <If Condition="[not logPath]" DisplayName="Eğer" sap:VirtualizedContainerService.HintSize="621,52" sap2010:WorkflowViewState.IdRef="If_24">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <If.Then>
-                      <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="476,752" sap2010:WorkflowViewState.IdRef="Sequence_60">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel " sap:VirtualizedContainerService.HintSize="434,660" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_6" Visible="False" WorkbookPath="[Io.Path.Combine(resourceLocation, &quot;Günlükler.xlsx&quot;)]">
-                          <ui:ExcelApplicationScope.Body>
-                            <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-                              <ActivityAction.Argument>
-                                <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-                              </ActivityAction.Argument>
-                              <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="376,551" sap2010:WorkflowViewState.IdRef="Sequence_61">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <ui:AddDataColumn x:TypeArguments="x:String" Column="{x:Null}" DefaultValue="{x:Null}" AllowDBNull="False" AutoIncrement="False" ColumnName="Kimden" DataTable="[logs]" DisplayName="Veri sütunu ekle" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_12" MaxLength="1000" Unique="False" />
-                                <ui:AddDataColumn x:TypeArguments="x:String" Column="{x:Null}" DefaultValue="{x:Null}" AllowDBNull="False" AutoIncrement="False" ColumnName="Tarih" DataTable="[logs]" DisplayName="Veri sütunu ekle" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_13" MaxLength="1000" Unique="False" />
-                                <ui:AddDataColumn x:TypeArguments="x:String" Column="{x:Null}" DefaultValue="{x:Null}" AllowDBNull="False" AutoIncrement="False" ColumnName="Konu" DataTable="[logs]" DisplayName="Veri sütunu ekle" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_14" MaxLength="1000" Unique="False" />
-                                <ui:AddDataColumn x:TypeArguments="x:Int32" Column="{x:Null}" DefaultValue="{x:Null}" AllowDBNull="False" AutoIncrement="False" ColumnName="Ek_sayısı" DataTable="[logs]" DisplayName="Veri sütunu ekle" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_15" MaxLength="1000" Unique="False" />
-                                <ui:AddDataColumn x:TypeArguments="x:String" Column="{x:Null}" DefaultValue="{x:Null}" AllowDBNull="False" AutoIncrement="False" ColumnName="Talep_sonucu" DataTable="[logs]" DisplayName="Veri sütunu ekle" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_16" MaxLength="1000" Unique="False" />
-                                <ui:AddDataColumn x:TypeArguments="x:String" Column="{x:Null}" DefaultValue="{x:Null}" AllowDBNull="False" AutoIncrement="False" ColumnName="Durum" DataTable="[logs]" DisplayName="Veri sütunu ekle" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_17" MaxLength="1000" Unique="False" />
-                                <ui:ExcelWriteRange AddHeaders="True" DataTable="[logs]" DisplayName="Aralığı yaz" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_4" SheetName="Sheet1" StartingCell="A1" />
-                              </Sequence>
-                            </ActivityAction>
-                          </ui:ExcelApplicationScope.Body>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </ui:ExcelApplicationScope>
-                      </Sequence>
-                    </If.Then>
-                  </If>
-                  <ui:PathExists DisplayName="Yol varmı?" Exists="[logPath]" sap:VirtualizedContainerService.HintSize="621,52" sap2010:WorkflowViewState.IdRef="PathExists_4" Path="[Io.Path.Combine(workingDirectory, &quot;Günlükler.xlsx&quot;)]" PathType="File">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:PathExists>
-                  <If Condition="[not logPath]" DisplayName="Eğer" sap:VirtualizedContainerService.HintSize="621,902" sap2010:WorkflowViewState.IdRef="If_55">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <If.Then>
-                      <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="476,752" sap2010:WorkflowViewState.IdRef="Sequence_131">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel " sap:VirtualizedContainerService.HintSize="434,660" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_11" Visible="False" WorkbookPath="[Io.Path.Combine(workingDirectory, &quot;Günlükler.xlsx&quot;)]">
-                          <ui:ExcelApplicationScope.Body>
-                            <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-                              <ActivityAction.Argument>
-                                <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-                              </ActivityAction.Argument>
-                              <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="376,551" sap2010:WorkflowViewState.IdRef="Sequence_130">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <ui:AddDataColumn x:TypeArguments="x:String" Column="{x:Null}" DefaultValue="{x:Null}" AllowDBNull="False" AutoIncrement="False" ColumnName="Kimden" DataTable="[logs]" DisplayName="Veri sütunu ekle" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_24" MaxLength="1000" Unique="False" />
-                                <ui:AddDataColumn x:TypeArguments="x:String" Column="{x:Null}" DefaultValue="{x:Null}" AllowDBNull="False" AutoIncrement="False" ColumnName="Tarih" DataTable="[logs]" DisplayName="Veri sütunu ekle" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_25" MaxLength="1000" Unique="False" />
-                                <ui:AddDataColumn x:TypeArguments="x:String" Column="{x:Null}" DefaultValue="{x:Null}" AllowDBNull="False" AutoIncrement="False" ColumnName="Konu" DataTable="[logs]" DisplayName="Veri sütunu ekle" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_26" MaxLength="1000" Unique="False" />
-                                <ui:AddDataColumn x:TypeArguments="x:Int32" Column="{x:Null}" DefaultValue="{x:Null}" AllowDBNull="False" AutoIncrement="False" ColumnName="Ek_sayısı" DataTable="[logs]" DisplayName="Veri sütunu ekle" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_27" MaxLength="1000" Unique="False" />
-                                <ui:AddDataColumn x:TypeArguments="x:String" Column="{x:Null}" DefaultValue="{x:Null}" AllowDBNull="False" AutoIncrement="False" ColumnName="Talep_sonucu" DataTable="[logs]" DisplayName="Veri sütunu ekle" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_28" MaxLength="1000" Unique="False" />
-                                <ui:AddDataColumn x:TypeArguments="x:String" Column="{x:Null}" DefaultValue="{x:Null}" AllowDBNull="False" AutoIncrement="False" ColumnName="Durum" DataTable="[logs]" DisplayName="Veri sütunu ekle" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_29" MaxLength="1000" Unique="False" />
-                                <ui:ExcelWriteRange AddHeaders="True" DataTable="[logs]" DisplayName="Aralığı yaz" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_6" SheetName="Sheet1" StartingCell="A1" />
-                              </Sequence>
-                            </ActivityAction>
-                          </ui:ExcelApplicationScope.Body>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </ui:ExcelApplicationScope>
-                      </Sequence>
-                    </If.Then>
-                  </If>
-                </Sequence>
-                <ui:ReadRange AddHeaders="True" DataTable="[logs]" DisplayName="Aralığı Oku" sap:VirtualizedContainerService.HintSize="521,87" sap2010:WorkflowViewState.IdRef="ReadRange_4" SheetName="Sheet1" WorkbookPath="[Io.Path.Combine(workingDirectory, &quot;Günlükler.xlsx&quot;)]">
-                  <ui:ReadRange.Range>
-                    <InArgument x:TypeArguments="x:String">
-                      <Literal x:TypeArguments="x:String" Value="" />
-                    </InArgument>
-                  </ui:ReadRange.Range>
-                </ui:ReadRange>
-                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{mail.From.Address, mail.Headers(&quot;Date&quot;), mail.Subject, mail.Attachments.Count, result, status}]" DataTable="[logs]" DisplayName="Veri satırı ekle" sap:VirtualizedContainerService.HintSize="521,22" sap2010:WorkflowViewState.IdRef="AddDataRow_7" />
-                <ui:WriteRange AddHeaders="True" DataTable="[logs]" DisplayName="Aralığa Yaz" sap:VirtualizedContainerService.HintSize="521,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="[Io.Path.Combine(workingDirectory, &quot;Günlükler.xlsx&quot;)]" />
-                <ui:GetOutlookMailMessages Account="{x:Null}" Filter="{x:Null}" TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="&quot;Top&quot; özelliği asla! AMA asla değiştirilmemeli.&#xA;Değer her zaman &quot;1&quot; olmalı.." DisplayName="Outlook iletilerini getir" GetAttachements="False" sap:VirtualizedContainerService.HintSize="521,79" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_7" MailFolder="Inbox" MarkAsRead="True" Messages="[mailMessages]" OnlyUnreadMessages="True" Top="1">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </ui:GetOutlookMailMessages>
-                <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="521,60" sap2010:WorkflowViewState.IdRef="Assign_28">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="x:Int32">[mailCount]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="x:Int32">[mailCount-1]</InArgument>
-                  </Assign.Value>
-                </Assign>
-                <If Condition="[mailCount=0]" DisplayName="Eğer" sap:VirtualizedContainerService.HintSize="521,606" sap2010:WorkflowViewState.IdRef="If_56">
-                  <If.Then>
-                    <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="376,458" sap2010:WorkflowViewState.IdRef="Sequence_132">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <ui:ReadRange AddHeaders="True" DataTable="[logsBase]" DisplayName="Aralığı Oku" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ReadRange_7" SheetName="Sheet1" WorkbookPath="[Io.Path.Combine(resourceLocation, &quot;Günlükler.xlsx&quot;)]">
-                        <ui:ReadRange.Range>
-                          <InArgument x:TypeArguments="x:String">
-                            <Literal x:TypeArguments="x:String" Value="" />
-                          </InArgument>
-                        </ui:ReadRange.Range>
-                      </ui:ReadRange>
-                      <ui:MergeDataTable Destination="[logsBase]" DisplayName="Veri Tablolalarını Birleştir" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="MergeDataTable_2" MissingSchemaAction="Add" Source="[logs]" />
-                      <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="Tarih" DataTable="[logsBase]" DisplayName="Ver Tablosunu Sırala" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="SortDataTable_1" Order="Ascending" OutputDataTable="[logsBase]" />
-                      <ui:WriteRange AddHeaders="True" DataTable="[logsBase]" DisplayName="Aralığa Yaz" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="WriteRange_3" SheetName="Sheet1" StartingCell="A1" WorkbookPath="[Io.Path.Combine(resourceLocation, &quot;Günlükler.xlsx&quot;)]" />
-                    </Sequence>
-                  </If.Then>
-                </If>
-              </Sequence>
-            </TryCatch.Finally>
-          </TryCatch>
-        </While>
-      </Sequence>
-    </FlowStep>
-    <FlowDecision x:Name="__ReferenceID31" sap2010:Annotation.AnnotationText="workingDirectory" Condition="[not String.IsNullOrEmpty(workingDirectory)]" DisplayName="Dizin Yolu" sap:VirtualizedContainerService.HintSize="133,115" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
+    <FlowDecision x:Name="__ReferenceID11" sap2010:Annotation.AnnotationText="workingDirectory" Condition="[not String.IsNullOrEmpty(workingDirectory)]" DisplayName="Dizin Yolu" sap:VirtualizedContainerService.HintSize="133,115" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1300,7 +113,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <FlowDecision.True>
-        <FlowStep x:Name="__ReferenceID21">
+        <FlowStep x:Name="__ReferenceID1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">445,154</av:Point>
@@ -1317,7 +130,7 @@
             </sap:WorkflowViewStateService.ViewState>
           </ui:PathExists>
           <FlowStep.Next>
-            <FlowDecision x:Name="__ReferenceID20" sap2010:Annotation.AnnotationText="workingDirectory" Condition="[sourceFolderExists]" DisplayName="Dizin" sap:VirtualizedContainerService.HintSize="133,115" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
+            <FlowDecision x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="workingDirectory" Condition="[sourceFolderExists]" DisplayName="Dizin" sap:VirtualizedContainerService.HintSize="133,115" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1331,7 +144,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <FlowDecision.True>
-                <FlowDecision x:Name="__ReferenceID25" sap2010:Annotation.AnnotationText="resourceLocation" Condition="[not String.IsNullOrEmpty(workingDirectory)]" DisplayName="Dizin Yolu" sap:VirtualizedContainerService.HintSize="132,115" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+                <FlowDecision x:Name="__ReferenceID5" sap2010:Annotation.AnnotationText="resourceLocation" Condition="[not String.IsNullOrEmpty(workingDirectory)]" DisplayName="Dizin Yolu" sap:VirtualizedContainerService.HintSize="132,115" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1345,7 +158,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <FlowDecision.True>
-                    <FlowStep x:Name="__ReferenceID24">
+                    <FlowStep x:Name="__ReferenceID4">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <av:Point x:Key="ShapeLocation">16.5,411.5</av:Point>
@@ -1362,7 +175,7 @@
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:PathExists>
                       <FlowStep.Next>
-                        <FlowDecision x:Name="__ReferenceID27" sap2010:Annotation.AnnotationText="resourceLocation" Condition="[not sourceFolderExists]" DisplayName="Dizin" sap:VirtualizedContainerService.HintSize="132,115" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+                        <FlowDecision x:Name="__ReferenceID7" sap2010:Annotation.AnnotationText="resourceLocation" Condition="[not sourceFolderExists]" DisplayName="Dizin" sap:VirtualizedContainerService.HintSize="132,115" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1376,7 +189,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <FlowDecision.True>
-                            <FlowStep x:Name="__ReferenceID28">
+                            <FlowStep x:Name="__ReferenceID8">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <av:Point x:Key="ShapeLocation">0,649</av:Point>
@@ -1393,12 +206,12 @@
                             </FlowStep>
                           </FlowDecision.True>
                           <FlowDecision.False>
-                            <FlowStep x:Name="__ReferenceID29">
+                            <FlowStep x:Name="__ReferenceID9">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <av:Point x:Key="ShapeLocation">506,604</av:Point>
                                   <av:Size x:Key="ShapeSize">200,112</av:Size>
-                                  <av:PointCollection x:Key="ConnectorLocation">706,660 756,660</av:PointCollection>
+                                  <av:PointCollection x:Key="ConnectorLocation">706,660 796,660</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <Sequence sap2010:Annotation.AnnotationText="Excel.&#xA;Ayarları oku. Değerleri Ata.." DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="200,112" sap2010:WorkflowViewState.IdRef="Sequence_67">
@@ -1508,27 +321,28 @@
                                 <ui:LogMessage DisplayName="Günlük Mesajı" sap:VirtualizedContainerService.HintSize="562,93" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;'Ayarlar.xlsx dosyası okundu'&quot;]" />
                               </Sequence>
                               <FlowStep.Next>
-                                <FlowStep x:Name="__ReferenceID30">
+                                <FlowStep x:Name="__ReferenceID10">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:Point x:Key="ShapeLocation">756,626</av:Point>
-                                      <av:Size x:Key="ShapeSize">200,68</av:Size>
+                                      <av:Point x:Key="ShapeLocation">796,604</av:Point>
+                                      <av:Size x:Key="ShapeSize">200,112</av:Size>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Sequence DisplayName="kontrol" sap:VirtualizedContainerService.HintSize="652,3103" sap2010:WorkflowViewState.IdRef="Sequence_165">
+                                  <Sequence sap2010:Annotation.AnnotationText="mail özellikleri ve ek kontrolü(excel eki kontrolü)" DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="744,3422" sap2010:WorkflowViewState.IdRef="Sequence_165">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:GetOutlookMailMessages Account="{x:Null}" Filter="{x:Null}" TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="&quot;Top&quot; özelliği asla! AMA asla değiştirilmemeli.&#xA;Değer her zaman &quot;1&quot; olmalı.." DisplayName="Outlook iletilerini getir" GetAttachements="False" sap:VirtualizedContainerService.HintSize="610,82" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_8" MailFolder="Inbox" MarkAsRead="True" Messages="[mailMessages]" OnlyUnreadMessages="True" Top="1">
+                                    <ui:GetOutlookMailMessages Account="{x:Null}" Filter="{x:Null}" TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="&quot;Top&quot; özelliği asla! AMA asla değiştirilmemeli.&#xA;Değer her zaman &quot;1&quot; olmalı.." DisplayName="Outlook iletilerini getir" GetAttachements="False" sap:VirtualizedContainerService.HintSize="702,82" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_8" MailFolder="Inbox" MarkAsRead="True" Messages="[mailMessages]" OnlyUnreadMessages="True" Top="1">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                     </ui:GetOutlookMailMessages>
-                                    <While DisplayName="Döngü" sap:VirtualizedContainerService.HintSize="610,2889" sap2010:WorkflowViewState.IdRef="While_5">
+                                    <While DisplayName="Döngü" sap:VirtualizedContainerService.HintSize="702,3180" sap2010:WorkflowViewState.IdRef="While_5">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1559,7 +373,7 @@
                                                 <InArgument x:TypeArguments="snm:MailMessage">[mailMessages(0)]</InArgument>
                                               </Assign.Value>
                                             </Assign>
-                                            <Assign sap:VirtualizedContainerService.HintSize="576,60" sap2010:WorkflowViewState.IdRef="Assign_87">
+                                            <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="576,60" sap2010:WorkflowViewState.IdRef="Assign_87">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:Boolean">[success]</OutArgument>
                                               </Assign.To>
@@ -2210,10 +1024,10 @@
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
                                                         </ui:ForEach>
-                                                        <ui:LogMessage DisplayName="Günlük Kontrolü" sap:VirtualizedContainerService.HintSize="948,93" sap2010:WorkflowViewState.IdRef="LogMessage_24" Level="Info" Message="[&quot;Ek dosya kontolleri tamamlandı&quot;]" />
+                                                        <ui:LogMessage DisplayName="Günlük Kontrolü" sap:VirtualizedContainerService.HintSize="948,93" sap2010:WorkflowViewState.IdRef="LogMessage_24" Level="Info" Message="[&quot;Ek dosya kontolleri başarılı&quot;]" />
                                                       </Sequence>
                                                     </Sequence>
-                                                    <Sequence sap2010:Annotation.AnnotationText="Zorunda alanı" DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="484,96" sap2010:WorkflowViewState.IdRef="Sequence_175">
+                                                    <Sequence sap2010:Annotation.AnnotationText="Zorunda alanı" DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="484,96" sap2010:WorkflowViewState.IdRef="Sequence_217">
                                                       <Sequence.Variables>
                                                         <Variable x:TypeArguments="x:Int32" Name="errorIndex" />
                                                       </Sequence.Variables>
@@ -2224,7 +1038,7 @@
                                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
-                                                      <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="955,60" sap2010:WorkflowViewState.IdRef="Assign_126">
+                                                      <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="1142,60" sap2010:WorkflowViewState.IdRef="Assign_148">
                                                         <Assign.To>
                                                           <OutArgument x:TypeArguments="s:String[]">[arraySample]</OutArgument>
                                                         </Assign.To>
@@ -2232,7 +1046,7 @@
                                                           <InArgument x:TypeArguments="s:String[]">[row("Örnek dosya").ToString.Trim(";"C).Split(";"C)]</InArgument>
                                                         </Assign.Value>
                                                       </Assign>
-                                                      <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="955,60" sap2010:WorkflowViewState.IdRef="Assign_127">
+                                                      <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="1142,60" sap2010:WorkflowViewState.IdRef="Assign_149">
                                                         <Assign.To>
                                                           <OutArgument x:TypeArguments="x:Int32">[errorIndex]</OutArgument>
                                                         </Assign.To>
@@ -2240,13 +1054,13 @@
                                                           <InArgument x:TypeArguments="x:Int32">0</InArgument>
                                                         </Assign.Value>
                                                       </Assign>
-                                                      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="Döngü" sap:VirtualizedContainerService.HintSize="955,3074" sap2010:WorkflowViewState.IdRef="ForEach`1_28" Values="[arraySample]">
+                                                      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="Döngü" sap:VirtualizedContainerService.HintSize="1142,4443" sap2010:WorkflowViewState.IdRef="ForEach`1_35" Values="[arraySample]">
                                                         <ui:ForEach.Body>
                                                           <ActivityAction x:TypeArguments="x:String">
                                                             <ActivityAction.Argument>
                                                               <DelegateInArgument x:TypeArguments="x:String" Name="sampleTable" />
                                                             </ActivityAction.Argument>
-                                                            <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="919,2939" sap2010:WorkflowViewState.IdRef="Sequence_193">
+                                                            <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="1106,4308" sap2010:WorkflowViewState.IdRef="Sequence_216">
                                                               <Sequence.Variables>
                                                                 <Variable x:TypeArguments="x:Boolean" Name="pathExists" />
                                                               </Sequence.Variables>
@@ -2255,15 +1069,15 @@
                                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
-                                                              <If Condition="[sampleTable.ToString.Trim&lt;&gt;&quot;&quot;]" DisplayName="Eğer" sap:VirtualizedContainerService.HintSize="877,2847" sap2010:WorkflowViewState.IdRef="If_87">
+                                                              <If Condition="[sampleTable.ToString.Trim&lt;&gt;&quot;&quot;]" DisplayName="Eğer" sap:VirtualizedContainerService.HintSize="1064,4216" sap2010:WorkflowViewState.IdRef="If_104">
                                                                 <If.Then>
-                                                                  <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="732,2697" sap2010:WorkflowViewState.IdRef="Sequence_192">
+                                                                  <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="919,4066" sap2010:WorkflowViewState.IdRef="Sequence_215">
                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                       </scg:Dictionary>
                                                                     </sap:WorkflowViewStateService.ViewState>
-                                                                    <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="690,60" sap2010:WorkflowViewState.IdRef="Assign_128">
+                                                                    <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="877,60" sap2010:WorkflowViewState.IdRef="Assign_150">
                                                                       <Assign.To>
                                                                         <OutArgument x:TypeArguments="x:Int32">[errorIndex]</OutArgument>
                                                                       </Assign.To>
@@ -2271,7 +1085,7 @@
                                                                         <InArgument x:TypeArguments="x:Int32">0</InArgument>
                                                                       </Assign.Value>
                                                                     </Assign>
-                                                                    <ui:PathExists DisplayName="Yol Var mı?" Exists="[pathExists]" sap:VirtualizedContainerService.HintSize="690,90" sap2010:WorkflowViewState.IdRef="PathExists_10" Path="[Io.Path.Combine(resourceLocation, sampleTable)]" PathType="File">
+                                                                    <ui:PathExists DisplayName="Yol Var mı?" Exists="[pathExists]" sap:VirtualizedContainerService.HintSize="877,90" sap2010:WorkflowViewState.IdRef="PathExists_12" Path="[Io.Path.Combine(resourceLocation, sampleTable)]" PathType="File">
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2279,7 +1093,7 @@
                                                                         </scg:Dictionary>
                                                                       </sap:WorkflowViewStateService.ViewState>
                                                                     </ui:PathExists>
-                                                                    <If Condition="[pathExists]" DisplayName="Eğer" sap:VirtualizedContainerService.HintSize="690,364" sap2010:WorkflowViewState.IdRef="If_83">
+                                                                    <If Condition="[pathExists]" DisplayName="Eğer" sap:VirtualizedContainerService.HintSize="877,364" sap2010:WorkflowViewState.IdRef="If_98">
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2287,7 +1101,7 @@
                                                                         </scg:Dictionary>
                                                                       </sap:WorkflowViewStateService.ViewState>
                                                                       <If.Then>
-                                                                        <ui:ReadRange AddHeaders="True" DataTable="[dataTableSample]" DisplayName="Aralığı Oku" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ReadRange_15" SheetName="Sheet1" WorkbookPath="[Io.Path.Combine(resourceLocation, sampleTable)]">
+                                                                        <ui:ReadRange AddHeaders="True" DataTable="[dataTableSample]" DisplayName="Aralığı Oku" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ReadRange_19" SheetName="Sheet1" WorkbookPath="[Io.Path.Combine(resourceLocation, sampleTable)]">
                                                                           <ui:ReadRange.Range>
                                                                             <InArgument x:TypeArguments="x:String">
                                                                               <Literal x:TypeArguments="x:String" Value="" />
@@ -2296,13 +1110,13 @@
                                                                         </ui:ReadRange>
                                                                       </If.Then>
                                                                       <If.Else>
-                                                                        <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_187">
+                                                                        <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_209">
                                                                           <sap:WorkflowViewStateService.ViewState>
                                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                             </scg:Dictionary>
                                                                           </sap:WorkflowViewStateService.ViewState>
-                                                                          <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_129">
+                                                                          <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_151">
                                                                             <Assign.To>
                                                                               <OutArgument x:TypeArguments="x:String">[status]</OutArgument>
                                                                             </Assign.To>
@@ -2310,17 +1124,17 @@
                                                                               <InArgument x:TypeArguments="x:String">Hata alındı</InArgument>
                                                                             </Assign.Value>
                                                                           </Assign>
-                                                                          <Throw DisplayName="Hata Fırlat" Exception="[New Exception(&quot;belirtilen dosya adı bulunamadı.&quot;)]" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Throw_55" />
+                                                                          <Throw DisplayName="Hata Fırlat" Exception="[New Exception(&quot;belirtilen dosya adı bulunamadı.&quot;)]" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Throw_60" />
                                                                         </Sequence>
                                                                       </If.Else>
                                                                     </If>
-                                                                    <ui:ForEach x:TypeArguments="snm:Attachment" CurrentIndex="{x:Null}" DisplayName="Döngü" sap:VirtualizedContainerService.HintSize="690,1971" sap2010:WorkflowViewState.IdRef="ForEach`1_27" Values="[mail.Attachments]">
+                                                                    <ui:ForEach x:TypeArguments="snm:Attachment" CurrentIndex="{x:Null}" DisplayName="Döngü" sap:VirtualizedContainerService.HintSize="877,3340" sap2010:WorkflowViewState.IdRef="ForEach`1_34" Values="[mail.Attachments]">
                                                                       <ui:ForEach.Body>
                                                                         <ActivityAction x:TypeArguments="snm:Attachment">
                                                                           <ActivityAction.Argument>
-                                                                            <DelegateInArgument x:TypeArguments="snm:Attachment" Name="excelTable" />
+                                                                            <DelegateInArgument x:TypeArguments="snm:Attachment" Name="AttachmentTable" />
                                                                           </ActivityAction.Argument>
-                                                                          <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="654,1836" sap2010:WorkflowViewState.IdRef="Sequence_191">
+                                                                          <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="841,3205" sap2010:WorkflowViewState.IdRef="Sequence_214">
                                                                             <Sequence.Variables>
                                                                               <Variable x:TypeArguments="x:Boolean" Name="errorFound" />
                                                                             </Sequence.Variables>
@@ -2329,14 +1143,14 @@
                                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                               </scg:Dictionary>
                                                                             </sap:WorkflowViewStateService.ViewState>
-                                                                            <ui:ReadRange AddHeaders="True" DataTable="[dataTableAttachment]" DisplayName="Aralığı Oku" sap:VirtualizedContainerService.HintSize="612,87" sap2010:WorkflowViewState.IdRef="ReadRange_16" SheetName="Sheet1" WorkbookPath="[Io.Path.Combine(workingDirectory, excelTable.Name)]">
+                                                                            <ui:ReadRange AddHeaders="True" DataTable="[dataTableAttachment]" DisplayName="Aralığı Oku" sap:VirtualizedContainerService.HintSize="799,87" sap2010:WorkflowViewState.IdRef="ReadRange_20" SheetName="Sheet1" WorkbookPath="[Io.Path.Combine(workingDirectory, AttachmentTable.Name)]">
                                                                               <ui:ReadRange.Range>
                                                                                 <InArgument x:TypeArguments="x:String">
                                                                                   <Literal x:TypeArguments="x:String" Value="" />
                                                                                 </InArgument>
                                                                               </ui:ReadRange.Range>
                                                                             </ui:ReadRange>
-                                                                            <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="612,60" sap2010:WorkflowViewState.IdRef="Assign_132">
+                                                                            <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="799,60" sap2010:WorkflowViewState.IdRef="Assign_152">
                                                                               <Assign.To>
                                                                                 <OutArgument x:TypeArguments="x:Boolean">[errorFound]</OutArgument>
                                                                               </Assign.To>
@@ -2344,50 +1158,126 @@
                                                                                 <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                                                                               </Assign.Value>
                                                                             </Assign>
-                                                                            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dataTableAttachment]" DisplayName="Döngü" sap:VirtualizedContainerService.HintSize="612,994" sap2010:WorkflowViewState.IdRef="ForEachRow_7">
+                                                                            <If Condition="[dataTableSample.Columns.Count &lt;&gt; dataTableAttachment.Columns.Count]" sap:VirtualizedContainerService.HintSize="799,887" sap2010:WorkflowViewState.IdRef="If_99">
+                                                                              <If.Then>
+                                                                                <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="574,737" sap2010:WorkflowViewState.IdRef="Sequence_220">
+                                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                    </scg:Dictionary>
+                                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                                  <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="532,60" sap2010:WorkflowViewState.IdRef="Assign_157">
+                                                                                    <Assign.To>
+                                                                                      <OutArgument x:TypeArguments="x:Int32">[errorIndex]</OutArgument>
+                                                                                    </Assign.To>
+                                                                                    <Assign.Value>
+                                                                                      <InArgument x:TypeArguments="x:Int32">[errorIndex+1]</InArgument>
+                                                                                    </Assign.Value>
+                                                                                  </Assign>
+                                                                                  <If sap2010:Annotation.AnnotationText="&#xA;Eksik sütun varsa maili yanıtla ve devam et.&#xA;" Condition="[errorIndex &gt;= mail.Attachments.Count]" DisplayName="Eğer" sap:VirtualizedContainerService.HintSize="532,483" sap2010:WorkflowViewState.IdRef="If_105">
+                                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                      </scg:Dictionary>
+                                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                                    <If.Then>
+                                                                                      <Sequence sap2010:Annotation.AnnotationText="&#xA;Hata maili at ve devam et.&#xA;" DisplayName="Mail at" sap:VirtualizedContainerService.HintSize="387,273" sap2010:WorkflowViewState.IdRef="Sequence_219">
+                                                                                        <sap:WorkflowViewStateService.ViewState>
+                                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                                          </scg:Dictionary>
+                                                                                        </sap:WorkflowViewStateService.ViewState>
+                                                                                        <ui:ReadTextFile Content="[mailBody]" DisplayName="Metin dosyasını oku" Encoding="utf-8" FileName="[Io.Path.Combine(resourceLocation, GeneralDataTable.Rows(0)(&quot;Hata iletisi&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="345,59" sap2010:WorkflowViewState.IdRef="ReadTextFile_33">
+                                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                            </scg:Dictionary>
+                                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                                        </ui:ReadTextFile>
+                                                                                        <Throw DisplayName="Hata Fırlat" Exception="[New Exception(&quot;Lütfen zorunlu alanları kontrol ediniz.&quot;)]" sap:VirtualizedContainerService.HintSize="345,22" sap2010:WorkflowViewState.IdRef="Throw_62" />
+                                                                                      </Sequence>
+                                                                                    </If.Then>
+                                                                                  </If>
+                                                                                  <ui:Continue sap:VirtualizedContainerService.HintSize="532,22" sap2010:WorkflowViewState.IdRef="Continue_6" />
+                                                                                </Sequence>
+                                                                              </If.Then>
+                                                                            </If>
+                                                                            <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="799,60" sap2010:WorkflowViewState.IdRef="Assign_153">
+                                                                              <Assign.To>
+                                                                                <OutArgument x:TypeArguments="x:Int32">[columnIndex]</OutArgument>
+                                                                              </Assign.To>
+                                                                              <Assign.Value>
+                                                                                <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                                                              </Assign.Value>
+                                                                            </Assign>
+                                                                            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dataTableAttachment]" DisplayName="Döngü" sap:VirtualizedContainerService.HintSize="799,1336" sap2010:WorkflowViewState.IdRef="ForEachRow_9">
                                                                               <ui:ForEachRow.Body>
                                                                                 <ActivityAction x:TypeArguments="sd:DataRow">
                                                                                   <ActivityAction.Argument>
                                                                                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                                                                                   </ActivityAction.Argument>
-                                                                                  <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="562,845" sap2010:WorkflowViewState.IdRef="Sequence_195">
+                                                                                  <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="749,1187" sap2010:WorkflowViewState.IdRef="Sequence_212">
                                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                                       </scg:Dictionary>
                                                                                     </sap:WorkflowViewStateService.ViewState>
-                                                                                    <ui:ForEach x:TypeArguments="sd:DataColumn" CurrentIndex="{x:Null}" DisplayName="Döngü" sap:VirtualizedContainerService.HintSize="520,503" sap2010:WorkflowViewState.IdRef="ForEach`1_29" Values="[dataTableAttachment.Columns]">
+                                                                                    <ui:ForEach x:TypeArguments="sd:DataColumn" CurrentIndex="{x:Null}" DisplayName="Döngü" sap:VirtualizedContainerService.HintSize="707,845" sap2010:WorkflowViewState.IdRef="ForEach`1_33" Values="[dataTableAttachment.Columns]">
                                                                                       <ui:ForEach.Body>
                                                                                         <ActivityAction x:TypeArguments="sd:DataColumn">
                                                                                           <ActivityAction.Argument>
                                                                                             <DelegateInArgument x:TypeArguments="sd:DataColumn" Name="column" />
                                                                                           </ActivityAction.Argument>
-                                                                                          <If Condition="[row(column).ToString.Trim = &quot;zorunludur&quot; Or&#xD;&#xA;row(column).ToString.Trim = &quot;&quot; Or&#xD;&#xA;row(column).ToString.Trim = String.Empty Or&#xD;&#xA;row(column).ToString.Trim = Nothing Or&#xD;&#xA;dataTableAttachment.Columns.Count &lt;&gt; dataTableSample.Columns.Count]" DisplayName="Eğer" sap:VirtualizedContainerService.HintSize="484,368" sap2010:WorkflowViewState.IdRef="If_88">
-                                                                                            <If.Then>
-                                                                                              <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_194">
-                                                                                                <sap:WorkflowViewStateService.ViewState>
-                                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                                  </scg:Dictionary>
-                                                                                                </sap:WorkflowViewStateService.ViewState>
-                                                                                                <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_133">
-                                                                                                  <Assign.To>
-                                                                                                    <OutArgument x:TypeArguments="x:Boolean">[errorFound]</OutArgument>
-                                                                                                  </Assign.To>
-                                                                                                  <Assign.Value>
-                                                                                                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                                                                                                  </Assign.Value>
-                                                                                                </Assign>
-                                                                                                <ui:Break sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Break_15" />
-                                                                                              </Sequence>
-                                                                                            </If.Then>
-                                                                                          </If>
+                                                                                          <Sequence sap:VirtualizedContainerService.HintSize="671,710" sap2010:WorkflowViewState.IdRef="Sequence_211">
+                                                                                            <sap:WorkflowViewStateService.ViewState>
+                                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                              </scg:Dictionary>
+                                                                                            </sap:WorkflowViewStateService.ViewState>
+                                                                                            <If Condition="[dataTableSample.Rows(0)(columnIndex).ToString = &quot;zorunludur&quot;]" sap:VirtualizedContainerService.HintSize="629,518" sap2010:WorkflowViewState.IdRef="If_101">
+                                                                                              <If.Then>
+                                                                                                <If Condition="[row(column).ToString.Trim = &quot;zorunludur&quot; Or&#xA;row(column).ToString.Trim = &quot;&quot; Or&#xA;row(column).ToString.Trim = String.Empty Or&#xA;row(column).ToString.Trim = Nothing Or&#xA;dataTableAttachment.Columns.Count &lt;&gt; dataTableSample.Columns.Count]" DisplayName="Eğer" sap:VirtualizedContainerService.HintSize="484,368" sap2010:WorkflowViewState.IdRef="If_100">
+                                                                                                  <If.Then>
+                                                                                                    <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_210">
+                                                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                        </scg:Dictionary>
+                                                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                                                      <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_154">
+                                                                                                        <Assign.To>
+                                                                                                          <OutArgument x:TypeArguments="x:Boolean">[errorFound]</OutArgument>
+                                                                                                        </Assign.To>
+                                                                                                        <Assign.Value>
+                                                                                                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                                                                        </Assign.Value>
+                                                                                                      </Assign>
+                                                                                                      <ui:Break sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Break_17" />
+                                                                                                    </Sequence>
+                                                                                                  </If.Then>
+                                                                                                </If>
+                                                                                              </If.Then>
+                                                                                            </If>
+                                                                                            <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="629,60" sap2010:WorkflowViewState.IdRef="Assign_155">
+                                                                                              <Assign.To>
+                                                                                                <OutArgument x:TypeArguments="x:Int32">[columnIndex]</OutArgument>
+                                                                                              </Assign.To>
+                                                                                              <Assign.Value>
+                                                                                                <InArgument x:TypeArguments="x:Int32">[columnIndex+1]</InArgument>
+                                                                                              </Assign.Value>
+                                                                                            </Assign>
+                                                                                          </Sequence>
                                                                                         </ActivityAction>
                                                                                       </ui:ForEach.Body>
                                                                                     </ui:ForEach>
-                                                                                    <If Condition="[errorFound]" DisplayName="Eğer" sap:VirtualizedContainerService.HintSize="520,210" sap2010:WorkflowViewState.IdRef="If_89">
+                                                                                    <If Condition="[errorFound]" DisplayName="Eğer" sap:VirtualizedContainerService.HintSize="707,210" sap2010:WorkflowViewState.IdRef="If_102">
                                                                                       <If.Then>
-                                                                                        <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_134">
+                                                                                        <Assign DisplayName="Ata" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_156">
                                                                                           <Assign.To>
                                                                                             <OutArgument x:TypeArguments="x:Int32">[errorIndex]</OutArgument>
                                                                                           </Assign.To>
@@ -2401,7 +1291,7 @@
                                                                                 </ActivityAction>
                                                                               </ui:ForEachRow.Body>
                                                                             </ui:ForEachRow>
-                                                                            <If sap2010:Annotation.AnnotationText="&#xA;Eksik sütun varsa maili yanıtla ve devam et.&#xA;" Condition="[errorIndex &gt;= mail.Attachments.Count]" DisplayName="Eğer" sap:VirtualizedContainerService.HintSize="612,483" sap2010:WorkflowViewState.IdRef="If_85">
+                                                                            <If sap2010:Annotation.AnnotationText="&#xA;Eksik sütun varsa maili yanıtla ve devam et.&#xA;" Condition="[errorIndex &gt;= mail.Attachments.Count]" DisplayName="Eğer" sap:VirtualizedContainerService.HintSize="799,483" sap2010:WorkflowViewState.IdRef="If_103">
                                                                               <sap:WorkflowViewStateService.ViewState>
                                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -2410,7 +1300,7 @@
                                                                                 </scg:Dictionary>
                                                                               </sap:WorkflowViewStateService.ViewState>
                                                                               <If.Then>
-                                                                                <Sequence sap2010:Annotation.AnnotationText="&#xA;Hata maili at ve devam et.&#xA;" DisplayName="Mail at" sap:VirtualizedContainerService.HintSize="387,273" sap2010:WorkflowViewState.IdRef="Sequence_189">
+                                                                                <Sequence sap2010:Annotation.AnnotationText="&#xA;Hata maili at ve devam et.&#xA;" DisplayName="Mail at" sap:VirtualizedContainerService.HintSize="387,273" sap2010:WorkflowViewState.IdRef="Sequence_213">
                                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2418,7 +1308,7 @@
                                                                                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                                                                     </scg:Dictionary>
                                                                                   </sap:WorkflowViewStateService.ViewState>
-                                                                                  <ui:ReadTextFile Content="[mailBody]" DisplayName="Metin dosyasını oku" Encoding="utf-8" FileName="[Io.Path.Combine(resourceLocation, GeneralDataTable.Rows(0)(&quot;Hata iletisi&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="345,59" sap2010:WorkflowViewState.IdRef="ReadTextFile_27">
+                                                                                  <ui:ReadTextFile Content="[mailBody]" DisplayName="Metin dosyasını oku" Encoding="utf-8" FileName="[Io.Path.Combine(resourceLocation, GeneralDataTable.Rows(0)(&quot;Hata iletisi&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="345,59" sap2010:WorkflowViewState.IdRef="ReadTextFile_32">
                                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2426,7 +1316,7 @@
                                                                                       </scg:Dictionary>
                                                                                     </sap:WorkflowViewStateService.ViewState>
                                                                                   </ui:ReadTextFile>
-                                                                                  <Throw DisplayName="Hata Fırlat" Exception="[New Exception(&quot;Lütfen zorunlu alanları kontrol ediniz.&quot;)]" sap:VirtualizedContainerService.HintSize="345,22" sap2010:WorkflowViewState.IdRef="Throw_56" />
+                                                                                  <Throw DisplayName="Hata Fırlat" Exception="[New Exception(&quot;Lütfen zorunlu alanları kontrol ediniz.&quot;)]" sap:VirtualizedContainerService.HintSize="345,22" sap2010:WorkflowViewState.IdRef="Throw_61" />
                                                                                 </Sequence>
                                                                               </If.Then>
                                                                             </If>
@@ -2502,7 +1392,7 @@
                                                 <InArgument x:TypeArguments="x:String">Talep işleme alınmıştır.</InArgument>
                                               </Assign.Value>
                                             </Assign>
-                                            <ui:LogMessage DisplayName="Günlük Mesajı" sap:VirtualizedContainerService.HintSize="576,93" sap2010:WorkflowViewState.IdRef="LogMessage_25" Level="Info" Message="[&quot;Süreç başarılı. Talep işleme alınmıştır.&quot;]" />
+                                            <ui:LogMessage DisplayName="Günlük Mesajı" sap:VirtualizedContainerService.HintSize="576,93" sap2010:WorkflowViewState.IdRef="LogMessage_25" Level="Info" Message="[&quot;→→→→ Süreç başarılı. Talep işleme alınmıştır ←←←←&quot;]" />
                                             <Sequence sap2010:Annotation.AnnotationText="tüm kontroller başarılı ise talepçiye &quot;Talebiniz işleme alınmıştır.&quot; mailini gönderir. " DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="576,353" sap2010:WorkflowViewState.IdRef="Sequence_154">
                                               <Sequence.Variables>
                                                 <Variable x:TypeArguments="x:String" Name="mailBody" />
@@ -2537,7 +1427,7 @@
                                           </Sequence>
                                         </TryCatch.Try>
                                         <TryCatch.Catches>
-                                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="530,22" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="622,22" sap2010:WorkflowViewState.IdRef="Catch`1_4">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2548,7 +1438,7 @@
                                               <ActivityAction.Argument>
                                                 <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                               </ActivityAction.Argument>
-                                              <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="563,785" sap2010:WorkflowViewState.IdRef="Sequence_157">
+                                              <Sequence DisplayName="Sıra" sap:VirtualizedContainerService.HintSize="563,783" sap2010:WorkflowViewState.IdRef="Sequence_157">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2798,7 +1688,7 @@
                     </FlowStep>
                   </FlowDecision.True>
                   <FlowDecision.False>
-                    <FlowStep x:Name="__ReferenceID26">
+                    <FlowStep x:Name="__ReferenceID6">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <av:Point x:Key="ShapeLocation">538.5,440.5</av:Point>
@@ -2817,7 +1707,7 @@
                 </FlowDecision>
               </FlowDecision.True>
               <FlowDecision.False>
-                <FlowStep x:Name="__ReferenceID22">
+                <FlowStep x:Name="__ReferenceID2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">701.5,330.5</av:Point>
@@ -2838,7 +1728,7 @@
         </FlowStep>
       </FlowDecision.True>
       <FlowDecision.False>
-        <FlowStep x:Name="__ReferenceID23">
+        <FlowStep x:Name="__ReferenceID3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">988,183</av:Point>
@@ -2855,16 +1745,16 @@
         </FlowStep>
       </FlowDecision.False>
     </FlowDecision>
-    <x:Reference>__ReferenceID20</x:Reference>
-    <x:Reference>__ReferenceID21</x:Reference>
-    <x:Reference>__ReferenceID22</x:Reference>
-    <x:Reference>__ReferenceID23</x:Reference>
-    <x:Reference>__ReferenceID24</x:Reference>
-    <x:Reference>__ReferenceID25</x:Reference>
-    <x:Reference>__ReferenceID26</x:Reference>
-    <x:Reference>__ReferenceID27</x:Reference>
-    <x:Reference>__ReferenceID28</x:Reference>
-    <x:Reference>__ReferenceID29</x:Reference>
-    <x:Reference>__ReferenceID30</x:Reference>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <x:Reference>__ReferenceID3</x:Reference>
+    <x:Reference>__ReferenceID4</x:Reference>
+    <x:Reference>__ReferenceID5</x:Reference>
+    <x:Reference>__ReferenceID6</x:Reference>
+    <x:Reference>__ReferenceID7</x:Reference>
+    <x:Reference>__ReferenceID8</x:Reference>
+    <x:Reference>__ReferenceID9</x:Reference>
+    <x:Reference>__ReferenceID10</x:Reference>
   </Flowchart>
 </Activity>
